@@ -3,6 +3,7 @@ set -eu
 
 google_creds_json=$(mktemp)
 echo $GCP_SERVICE_ACCOUNT_KEY > $google_creds_json
+export CLOUDSDK_PYTHON_SITEPACKAGES=1
 gcloud auth activate-service-account concourse-user@fe-gvijayaratnam.iam.gserviceaccount.com --key-file $google_creds_json
 gcloud config set project $GCP_PROJECT_ID
 gcloud config set compute/region $GCP_REGION
