@@ -19,7 +19,8 @@ if [ -n "$STEMCELL_VERSION" ]; then
       --target https://$OPS_MGR_HOST \
       --username $OPS_MGR_USR \
       --password $OPS_MGR_PWD \
-      --skip-ssl-validation
+      --skip-ssl-validation \
+      curl --silent --path "/api/v0/diagnostic_report"
   )
 
   echo "Step 3"
